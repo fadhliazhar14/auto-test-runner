@@ -1,0 +1,8 @@
+# Ignore logs directory
+logs/
+
+#Ignore docs directory
+docs/
+
+#Ignore screenshots directory
+screenshots/

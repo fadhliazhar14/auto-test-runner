@@ -371,6 +371,12 @@ public class CucumberTestEngine {
                 stepRunner.iNavigateTo(url);
                 return true;
             }
+
+            if (stepText.matches("I am on the page \"(.+)\"")) {
+                String url = extractQuotedText(stepText);
+                stepRunner.iAmOnThePage(url);
+                return true;
+            }
             
             // Click actions
             if (stepText.matches("I click on element \"(.+)\"")) {
