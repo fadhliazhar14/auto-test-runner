@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Auto Test Runner</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 960px; margin: 20px auto; padding: 0 20px; background-color: #f9f9f9; }
+        h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 40px; }
+        h1 { font-size: 2.5em; text-align: center; border-bottom: 4px solid #3498db; }
+        code { background-color: #ecf0f1; padding: 2px 6px; border-radius: 4px; font-family: "Courier New", Courier, monospace; }
+        pre { background-color: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .container { background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .tech-stack, .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background-color: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 5px solid #3498db; }
+        .card h4 { margin-top: 0; color: #3498db; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dokumentasi Codebase: Auto Test Runner</h1>
+
+        <section id="overview">
+            <h2>1. Gambaran Umum Proyek</h2>
+            <p>
+                <strong>Auto Test Runner</strong> adalah sebuah aplikasi desktop berbasis Java yang dirancang untuk mengelola dan mengeksekusi skenario pengujian otomatis berdasarkan metodologi <em>Behavior-Driven Development</em> (BDD). Aplikasi ini memungkinkan pengguna (seperti QA Engineer atau developer) untuk menulis, menyimpan, dan menjalankan skenario tes dalam format Gherkin (Given-When-Then) melalui antarmuka grafis (GUI) yang intuitif.
+            </p>
+            <p>
+                Tujuan utama dari aplikasi ini adalah untuk menyederhanakan proses BDD testing dengan menyediakan alat terpusat yang mengintegrasikan penulisan skenario, eksekusi melalui Selenium, dan penyimpanan hasil ke database.
+            </p>
+        </section>
+
+        <section id="tech-stack">
+            <h2>2. Teknologi yang Digunakan</h2>
+            <p>Aplikasi ini dibangun menggunakan beberapa teknologi dan library utama:</p>
+            <div class="tech-stack">
+                <div class="card">
+                    <h4>Bahasa & Platform</h4>
+                    <ul>
+                        <li><strong>Java 17</strong>: Versi modern dari Java yang menjadi dasar aplikasi.</li>
+                        <li><strong>Java Swing</strong>: Framework untuk membangun antarmuka aplikasi desktop.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Testing & Automasi</h4>
+                    <ul>
+                        <li><strong>Cucumber 7.15.0</strong>: Framework untuk implementasi BDD.</li>
+                        <li><strong>Selenium 4.15.0</strong>: Alat untuk automasi interaksi browser (web testing).</li>
+                        <li><strong>WebDriverManager</strong>: Mengelola driver untuk Selenium secara otomatis.</li>
+                        <li><strong>JUnit 5</strong>: Framework untuk unit testing.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Database</h4>
+                    <ul>
+                        <li><strong>MySQL 8.0</strong>: Sistem database relasional untuk menyimpan data skenario dan hasil tes.</li>
+                        <li><strong>HikariCP</strong>: Library connection pool untuk manajemen koneksi database yang efisien.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Build & Lainnya</h4>
+                    <ul>
+                        <li><strong>Maven</strong>: Alat untuk manajemen dependensi dan build proyek.</li>
+                        <li><strong>Logback & SLF4J</strong>: Framework untuk logging aktivitas aplikasi.</li>
+                        <li><strong>Jackson</strong>: Library untuk pemrosesan data JSON.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture">
+            <h2>3. Arsitektur Aplikasi</h2>
+            <p>
+                Aplikasi ini mengadopsi <strong>arsitektur berlapis (Layered Architecture)</strong> untuk memisahkan tanggung jawab dan meningkatkan maintainability. Berikut adalah lapisan-lapisan utamanya:
+            </p>
+            <ol>
+                <li><strong>Presentation Layer (UI)</strong>: Dibangun menggunakan Java Swing, lapisan ini bertanggung jawab untuk menampilkan data kepada pengguna dan menangkap input. Terletak di dalam package <code>com.fadhli.automation.ui</code>.</li>
+                <li><strong>Service Layer (Business Logic)</strong>: Lapisan ini berisi logika bisnis utama aplikasi, seperti validasi data dan koordinasi antar komponen. Terletak di package <code>com.fadhli.automation.service</code>.</li>
+                <li><strong>Data Access Layer (DAO)</strong>: Bertanggung jawab untuk abstraksi operasi database (CRUD). Menggunakan <em>DAO Pattern</em> untuk memisahkan logika bisnis dari logika akses data. Terletak di package <code>com.fadhli.automation.dao</code>.</li>
+                <li><strong>Database Layer</strong>: Merupakan database MySQL yang menyimpan semua data persisten.</li>
+            </ol>
+            <p>Alur data umumnya adalah: <code>UI -> Service -> DAO -> Database</code>, dan sebaliknya.</p>
+        </section>
+
+        <section id="database-schema">
+            <h2>4. Struktur Database</h2>
+            <p>Aplikasi menggunakan database MySQL untuk menyimpan data. Skema tabel utama dibuat secara otomatis saat aplikasi pertama kali dijalankan.</p>
+            <h3>Tabel `scenario`</h3>
+            <p>Menyimpan informasi utama tentang sebuah skenario tes.</p>
+            <pre><code>CREATE TABLE scenario (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    feature_name VARCHAR(255) NOT NULL,
+    scenario_name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);</code></pre>
+
+            <h3>Tabel `step`</h3>
+            <p>Menyimpan langkah-langkah (steps) yang terkait dengan sebuah skenario.</p>
+            <pre><code>CREATE TABLE step (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    scenario_id BIGINT NOT NULL,
+    step_type VARCHAR(10) NOT NULL, -- "Given", "When", "Then", "And"
+    step_text TEXT NOT NULL,
+    step_order INT NOT NULL,
+    FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE
+);</code></pre>
+        </section>
+
+        <section id="functionality">
+            <h2>5. Fungsionalitas Utama</h2>
+            <p>Berikut adalah fungsionalitas inti yang disediakan oleh aplikasi:</p>
+            <div class="features">
+                <div class="card">
+                    <h4>Manajemen Skenario</h4>
+                    <p>Pengguna dapat melakukan operasi CRUD (Create, Read, Update, Delete) untuk skenario tes, termasuk menambahkan dan mengedit langkah-langkah tes secara dinamis.</p>
+                </div>
+                <div class="card">
+                    <h4>Eksekusi Tes</h4>
+                    <p>Menjalankan skenario tes yang dipilih menggunakan engine Cucumber. Selenium akan membuka browser dan menjalankan interaksi sesuai dengan step definitions yang ada.</p>
+                </div>
+                <div class="card">
+                    <h4>Logging & Monitoring</h4>
+                    <p>Aplikasi menampilkan log eksekusi secara real-time di sebuah console. Jika terjadi kegagalan, aplikasi juga akan otomatis mengambil screenshot halaman web pada saat itu.</p>
+                </div>
+                <div class="card">
+                    <h4>Penyimpanan Persisten</h4>
+                    <p>Semua skenario dan langkah-langkahnya disimpan di dalam database MySQL, sehingga data tidak hilang saat aplikasi ditutup dan dapat diakses kembali.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="setup">
+            <h2>6. Panduan Setup dan Menjalankan Aplikasi</h2>
+            <p>Berikut langkah-langkah untuk menyiapkan dan menjalankan proyek di lingkungan lokal.</p>
+            
+            <h3>Prasyarat</h3>
+            <ul>
+                <li><strong>Java 17</strong> (atau lebih tinggi)</li>
+                <li><strong>Maven 3.6</strong> (atau lebih tinggi)</li>
+                <li><strong>MySQL 8.0</strong> (atau lebih tinggi)</li>
+                <li><strong>Google Chrome</strong> (terinstal)</li>
+            </ul>
+
+            <h3>Langkah-langkah</h3>
+            <ol>
+                <li>
+                    <strong>Konfigurasi Database:</strong>
+                    <p>Edit file <code>src/main/resources/database.properties</code> dan sesuaikan dengan konfigurasi MySQL Anda, terutama username dan password.</p>
+                    <pre><code>db.url=jdbc:mysql://localhost:3306/bdd_test_runner?createDatabaseIfNotExist=true
+db.username=root
+db.password=password_anda</code></pre>
+                </li>
+                <li>
+                    <strong>Build Proyek:</strong>
+                    <p>Buka terminal di direktori root proyek dan jalankan perintah Maven untuk mengkompilasi kode dan mengunduh dependensi.</p>
+                    <pre><code>mvn clean compile</code></pre>
+                </li>
+                <li>
+                    <strong>Menjalankan Aplikasi:</strong>
+                    <p>Setelah build berhasil, jalankan aplikasi menggunakan perintah Maven berikut:</p>
+                    <pre><code>mvn exec:java -Dexec.mainClass="com.fadhli.automation.BddTestRunnerApplication"</code></pre>
+                    <p>Alternatif lain adalah dengan membuat file JAR yang bisa dieksekusi:</p>
+                    <pre><code>mvn clean package
+java -jar target/bdd-test-runner-1.0.0.jar</code></pre>
+                </li>
+            </ol>
+            <p>Saat pertama kali berjalan, aplikasi akan secara otomatis membuat database dan tabel yang diperlukan jika belum ada.</p>
+        </section>
+    </div>
+</body>
+</html>
