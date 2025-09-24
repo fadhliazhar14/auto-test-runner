@@ -1,0 +1,58 @@
+=== Cucumber BDD Test Execution Log ===
+Feature: Upload
+Scenario: Test upload
+Execution Time: 16,05s
+Status: PASS
+Timestamp: 2025-09-24T14:12:40.130981500
+Test Framework: Cucumber + Selenium WebDriver
+
+=== Execution Log ===
+[14:12:24] === Starting Cucumber BDD Test Execution ===
+[14:12:24] Feature: Upload
+[14:12:24] Scenario: Test upload
+[14:12:24] Steps: 4
+[14:12:24] 
+[14:12:24] Generated feature file: scenario_2_Test_upload.feature
+[14:12:24] Feature content:
+[14:12:24]   Feature: Upload
+[14:12:24]   
+[14:12:24]     Scenario: Test upload
+[14:12:24]       Given I open the page "https://dev.osacademy.net/Explorations_Dhli/TestExcel"
+[14:12:24]       And I wait for 3 seconds
+[14:12:24]       When I click on element "id:Upload1"
+[14:12:24]       And I wait for 2 seconds
+[14:12:24] 
+[14:12:24] 🚀 Starting REAL Selenium WebDriver execution...
+[14:12:24] 🔧 Configuring Selenium WebDriver...
+[14:12:24] ⚙️ Browser: Chrome (GUI Mode)
+[14:12:24] ⏱️ Timeout: 15 seconds
+[14:12:24] 
+[14:12:26] ✅ WebDriver initialized successfully!
+[14:12:26] 🔄 Test setup completed
+[14:12:26] 📋 Executing 4 test steps...
+[14:12:26] 
+[14:12:26] ➡️ Step 1/4: Given I open the page "https://dev.osacademy.net/Explorations_Dhli/TestExcel"
+[14:12:26] 🔍 Parsing step: I open the page "https://dev.osacademy.net/Explorations_Dhli/TestExcel"
+[14:12:28] ✅ Step PASSED
+[14:12:29] 
+[14:12:29] ➡️ Step 2/4: And I wait for 3 seconds
+[14:12:29] 🔍 Parsing step: I wait for 3 seconds
+[14:12:32] ✅ Step PASSED
+[14:12:34] 
+[14:12:34] ➡️ Step 3/4: When I click on element "id:Upload1"
+[14:12:34] 🔍 Parsing step: I click on element "id:Upload1"
+[14:12:34] ✅ Step PASSED
+[14:12:36] 
+[14:12:36] ➡️ Step 4/4: And I wait for 2 seconds
+[14:12:36] 🔍 Parsing step: I wait for 2 seconds
+[14:12:38] ✅ Step PASSED
+[14:12:39] 
+[14:12:39] === Test Execution Summary ===
+[14:12:39] ✅ ALL STEPS PASSED!
+[14:12:39] 🎯 Selenium automation completed successfully
+[14:12:39] 🏁 Returning execution result: SUCCESS
+[14:12:39] 🧹 Starting cleanup process...
+[14:12:39] 🧩 Cleaning up test resources...
+[14:12:39] 🔧 Closing WebDriver...
+[14:12:40] ✅ WebDriver closed successfully
+[14:12:40] ✨ Cleanup process completed

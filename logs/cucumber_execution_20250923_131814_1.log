@@ -1,0 +1,40 @@
+=== Cucumber BDD Test Execution Log ===
+Feature: Test Feature
+Scenario: Test Scenario
+Execution Time: 9,06s
+Status: PASS
+Timestamp: 2025-09-23T13:18:14.196066
+Test Framework: Cucumber + Selenium WebDriver
+
+=== Execution Log ===
+[13:18:05] === Starting Cucumber BDD Test Execution ===
+[13:18:05] Feature: Test Feature
+[13:18:05] Scenario: Test Scenario
+[13:18:05] Steps: 6
+[13:18:05] 
+[13:18:05] Generated feature file: scenario_1_Test_Scenario.feature
+[13:18:05] Feature content:
+[13:18:05]   Feature: Test Feature
+[13:18:05]   
+[13:18:05]     Scenario: Test Scenario
+[13:18:05]       Given I open the page "https://www.google.com"
+[13:18:05]       When I type "TEST" into element search
+[13:18:05]       And I wait for 2 seconds
+[13:18:05]       And I click on element (//input[@name='btnK'])[1]
+[13:18:05]       Then I click on element "(//input[@name='btnK'])[1]"
+[13:18:05]       And I should see text "TESST" on element "h3"
+[13:18:05] 
+[13:18:05] Executing Cucumber test...
+[13:18:05] Executing step 1/6: Given I open the page "https://www.google.com"
+[13:18:06] ✓ Step completed successfully
+[13:18:06] Executing step 2/6: When I type "TEST" into element search
+[13:18:08] ✓ Step completed successfully
+[13:18:08] Executing step 3/6: And I wait for 2 seconds
+[13:18:09] ✓ Step completed successfully
+[13:18:09] Executing step 4/6: And I click on element (//input[@name='btnK'])[1]
+[13:18:11] ✓ Step completed successfully
+[13:18:11] Executing step 5/6: Then I click on element "(//input[@name='btnK'])[1]"
+[13:18:12] ✓ Step completed successfully
+[13:18:12] Executing step 6/6: And I should see text "TESST" on element "h3"
+[13:18:14] ✓ Step completed successfully
+[13:18:14] === All steps completed successfully ===

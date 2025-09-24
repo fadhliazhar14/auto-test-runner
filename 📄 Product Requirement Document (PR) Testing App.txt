@@ -1,0 +1,168 @@
+📋 Software Requirement Specification (SRS)
+1️⃣ Tujuan Aplikasi
+
+Aplikasi desktop ini berfungsi sebagai BDD Automation Test Runner yang memungkinkan user:
+
+Menulis atau mengedit scenario Gherkin melalui form UI.
+
+Menyimpan scenario ke database agar persistent.
+
+Menjalankan scenario secara langsung menggunakan Cucumber + Selenium.
+
+Melihat hasil eksekusi (PASS/FAIL) beserta log & screenshot.
+
+2️⃣ Lingkup Sistem
+
+Aplikasi hanya berjalan di desktop (Windows/Linux/Mac), menggunakan:
+
+Java 17
+
+Swing untuk GUI
+
+MySQL untuk penyimpanan
+Cucumber + JUnit + Selenium untuk eksekusi test
+
+3️⃣ Fitur Utama
+A. Manajemen Scenario
+
+Create New Scenario
+
+Form untuk input Feature Name & Scenario Name.
+
+Dynamic row untuk menambahkan step:
+
+Dropdown Step Type: Given / When / Then / And
+
+Text field untuk Step Content (e.g. I open the page "https://example.com")
+
+Tombol ➕ untuk menambah row baru
+
+Tombol ➖ untuk menghapus row tertentu
+
+Edit Scenario
+
+Load scenario dari database, tampilkan form beserta step-step-nya.
+
+User bisa mengubah isi step, menambah step baru, atau menghapus step.
+
+Delete Scenario
+
+Hapus scenario dari database.
+
+List Scenario
+
+Tampilkan daftar scenario dalam tabel:
+
+Feature Name
+
+Scenario Name
+
+Last Updated
+
+Tombol Edit / Delete / Run
+
+B. Eksekusi Scenario
+
+Jalankan scenario terpilih dengan memanggil Cucumber secara programatis.
+
+Eksekusi step menggunakan Generic Step Definitions yang sudah ada.
+
+Tampilkan status eksekusi secara live (log di TextArea).
+
+Simpan hasil eksekusi (PASS/FAIL) ke database bersama timestamp.
+
+C. Report & Logging
+
+Simpan log eksekusi (text file) & screenshot error (jika ada) di folder logs/ dan screenshots/.
+
+Di UI, user bisa klik View Last Report untuk membuka file log & melihat screenshot.
+
+4️⃣ Desain Database (SQLite)
+Tabel scenario
+Kolom	Tipe	Keterangan
+id	INTEGER PK AUTOINCREMENT	Primary key
+feature_name	TEXT NOT NULL	Nama feature
+scenario_name	TEXT NOT NULL	Nama scenario
+created_at	DATETIME	Timestamp dibuat
+updated_at	DATETIME	Timestamp terakhir diubah
+Tabel step
+Kolom	Tipe	Keterangan
+id	INTEGER PK AUTOINCREMENT	Primary key
+scenario_id	INTEGER FK	Relasi ke scenario
+step_type	TEXT NOT NULL	("Given", "When", "Then", "And")
+step_text	TEXT NOT NULL	Isi step
+step_order	INTEGER	Urutan eksekusi
+Tabel execution_result
+Kolom	Tipe	Keterangan
+id	INTEGER PK AUTOINCREMENT	Primary key
+scenario_id	INTEGER FK	Relasi ke scenario
+status	TEXT NOT NULL	("PASS", "FAIL")
+log_path	TEXT	Lokasi file log
+screenshot_path	TEXT	Lokasi screenshot jika gagal
+executed_at	DATETIME	Waktu eksekusi
+5️⃣ Desain UI (Swing)
+A. Main Window
+
+Menu Bar: File (Exit), Tools (Settings), Help (About)
+
+Scenario Table: menampilkan daftar scenario
+
+Buttons: Create, Edit, Delete, Run
+
+B. Scenario Form Dialog
+
+TextField: Feature Name, Scenario Name
+
+Dynamic Step Panel:
+
+Setiap row: JComboBox (Given/When/Then/And), JTextField (Step Text), JButton (+), JButton (–)
+
+Panel ini bisa bertambah/berkurang sesuai kebutuhan
+
+Buttons: Save, Cancel
+
+C. Execution Console
+
+JTextArea (read-only) menampilkan log eksekusi secara real-time.
+
+Label status (PASS/FAIL).
+
+Tombol "View Report" jika sudah selesai.
+
+6️⃣ Teknis Integrasi Eksekusi
+
+Setelah user klik Run, aplikasi akan:
+
+Generate file .feature dari data scenario & step di database.
+
+Memanggil Cucumber runner secara programatis.
+
+Stream output log ke JTextArea.
+
+Simpan hasil eksekusi & screenshot jika gagal.
+
+Update tabel execution_result.
+
+7️⃣ Non-Functional Requirements
+
+Java Version: 17
+
+UI Library: Swing (native, tidak pakai JavaFX)
+
+Browser: Chrome (via Selenium ChromeDriver)
+
+OS: Windows 10+, Linux, macOS (cross-platform)
+
+DB: MySQL
+
+Build Tool: Maven
+
+8️⃣ Future Enhancement (Opsional)
+
+Support parallel execution
+
+Support multi-feature dalam satu eksekusi
+
+Export hasil test ke PDF/HTML
+
+Integrasi dengan Git untuk versioning scenario

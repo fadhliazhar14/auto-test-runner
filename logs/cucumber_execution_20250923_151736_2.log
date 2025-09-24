@@ -1,0 +1,40 @@
+=== Cucumber BDD Test Execution Log ===
+Feature: Upload
+Scenario: Test upload
+Execution Time: 4,42s
+Status: PASS
+Timestamp: 2025-09-23T15:17:36.215678400
+Test Framework: Cucumber + Selenium WebDriver
+
+=== Execution Log ===
+[15:17:31] === Starting Cucumber BDD Test Execution ===
+[15:17:31] Feature: Upload
+[15:17:31] Scenario: Test upload
+[15:17:31] Steps: 1
+[15:17:31] 
+[15:17:31] Generated feature file: scenario_2_Test_upload.feature
+[15:17:31] Feature content:
+[15:17:31]   Feature: Upload
+[15:17:31]   
+[15:17:31]     Scenario: Test upload
+[15:17:31]       Given https://dev.osacademy.net/Explorations_Dhli/TestExcel
+[15:17:31] 
+[15:17:31] 🚀 Starting REAL Selenium WebDriver execution...
+[15:17:31] 🔧 Configuring Selenium WebDriver...
+[15:17:31] ⚙️ Browser: Chrome (GUI Mode)
+[15:17:31] ⏱️ Timeout: 15 seconds
+[15:17:31] 
+[15:17:34] ✅ WebDriver initialized successfully!
+[15:17:34] 🔄 Test setup completed
+[15:17:34] 📋 Executing 1 test steps...
+[15:17:34] 
+[15:17:34] ➡️ Step 1/1: Given https://dev.osacademy.net/Explorations_Dhli/TestExcel
+[15:17:34] 🔍 Parsing step: https://dev.osacademy.net/Explorations_Dhli/TestExcel
+[15:17:34] ⚠️ Unknown step pattern: https://dev.osacademy.net/Explorations_Dhli/TestExcel
+[15:17:34] 📝 Skipping step (not implemented)
+[15:17:34] ✅ Step PASSED
+[15:17:35] 
+[15:17:35] === Test Execution Summary ===
+[15:17:35] ✅ ALL STEPS PASSED!
+[15:17:35] 🎯 Selenium automation completed successfully
+[15:17:35] 🧩 Cleaning up test resources...

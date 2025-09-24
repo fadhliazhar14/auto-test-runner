@@ -1,0 +1,71 @@
+=== Cucumber BDD Test Execution Log ===
+Feature: Test Feature
+Scenario: Test Scenario
+Execution Time: 45,36s
+Status: FAIL
+Timestamp: 2025-09-24T14:27:53.233830100
+Test Framework: Cucumber + Selenium WebDriver
+
+=== Execution Log ===
+[14:27:07] === Starting Cucumber BDD Test Execution ===
+[14:27:07] Feature: Test Feature
+[14:27:07] Scenario: Test Scenario
+[14:27:07] Steps: 6
+[14:27:07] 
+[14:27:07] Generated feature file: scenario_1_Test_Scenario.feature
+[14:27:07] Feature content:
+[14:27:07]   Feature: Test Feature
+[14:27:07]   
+[14:27:07]     Scenario: Test Scenario
+[14:27:07]       Given I open the page "https://www.google.com"
+[14:27:07]       When I type "OpenAI" into element "id:APjFqb"
+[14:27:07]       And I wait for 2 seconds
+[14:27:07]       And I click on element "(//input[@name='btnK'])[1]"
+[14:27:07]       Then I wait for 30 seconds
+[14:27:07]       And I should see "OpenAAAI" on element "tag:h3"
+[14:27:07] 
+[14:27:07] 🚀 Starting REAL Selenium WebDriver execution...
+[14:27:07] 🔧 Configuring Selenium WebDriver...
+[14:27:07] ⚙️ Browser: Chrome (GUI Mode)
+[14:27:07] ⏱️ Timeout: 15 seconds
+[14:27:07] 
+[14:27:09] ✅ WebDriver initialized successfully!
+[14:27:09] 🔄 Test setup completed
+[14:27:09] 📋 Executing 6 test steps...
+[14:27:09] 
+[14:27:09] ➡️ Step 1/6: Given I open the page "https://www.google.com"
+[14:27:09] 🔍 Parsing step: I open the page "https://www.google.com"
+[14:27:09] ✅ Step PASSED
+[14:27:11] 
+[14:27:11] ➡️ Step 2/6: When I type "OpenAI" into element "id:APjFqb"
+[14:27:11] 🔍 Parsing step: I type "OpenAI" into element "id:APjFqb"
+[14:27:11] ✅ Step PASSED
+[14:27:13] 
+[14:27:13] ➡️ Step 3/6: And I wait for 2 seconds
+[14:27:13] 🔍 Parsing step: I wait for 2 seconds
+[14:27:15] ✅ Step PASSED
+[14:27:16] 
+[14:27:16] ➡️ Step 4/6: And I click on element "(//input[@name='btnK'])[1]"
+[14:27:16] 🔍 Parsing step: I click on element "(//input[@name='btnK'])[1]"
+[14:27:19] ✅ Step PASSED
+[14:27:20] 
+[14:27:20] ➡️ Step 5/6: Then I wait for 30 seconds
+[14:27:20] 🔍 Parsing step: I wait for 30 seconds
+[14:27:50] ✅ Step PASSED
+[14:27:52] 
+[14:27:52] ➡️ Step 6/6: And I should see "OpenAAAI" on element "tag:h3"
+[14:27:52] 🔍 Parsing step: I should see "OpenAAAI" on element "tag:h3"
+[14:27:52] ❌ Step assertion failed: Expected text 'OpenAAAI' not found on element 'tag:h3' ==> expected: <true> but was: <false>
+[14:27:52] ❌ Step FAILED
+[14:27:52] === Test Execution Summary ===
+[14:27:52] ❌ TEST FAILED!
+[14:27:52] 🚨 Failed at step 6/6
+[14:27:52] 🏁 Returning execution result: FAILED
+[14:27:52] 🧹 Starting cleanup process...
+[14:27:52] 🧩 Cleaning up test resources...
+[14:27:52] 🔧 Closing WebDriver...
+[14:27:53] ✅ WebDriver closed successfully
+[14:27:53] ✨ Cleanup process completed
+
+=== Error Details ===
+Test execution failed

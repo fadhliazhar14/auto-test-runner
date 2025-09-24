@@ -1,0 +1,820 @@
+2025-09-22 14:36:43.463 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 14:36:43.687 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 14:36:43.692 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 14:36:45.193 [main] ERROR com.zaxxer.hikari.pool.HikariPool - BDDTestRunnerPool - Exception during pool initialization.
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.fadhli.automation.util.DatabaseUtil.initializeDataSource(DatabaseUtil.java:91)
+	at com.fadhli.automation.util.DatabaseUtil.<init>(DatabaseUtil.java:43)
+	at com.fadhli.automation.util.DatabaseUtil.getInstance(DatabaseUtil.java:52)
+	at com.fadhli.automation.BddTestRunnerApplication.initializeDatabase(BddTestRunnerApplication.java:81)
+	at com.fadhli.automation.BddTestRunnerApplication.main(BddTestRunnerApplication.java:31)
+2025-09-22 14:36:45.235 [main] ERROR c.f.automation.util.DatabaseUtil - Failed to initialize database connection pool
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.fadhli.automation.util.DatabaseUtil.initializeDataSource(DatabaseUtil.java:91)
+	at com.fadhli.automation.util.DatabaseUtil.<init>(DatabaseUtil.java:43)
+	at com.fadhli.automation.util.DatabaseUtil.getInstance(DatabaseUtil.java:52)
+	at com.fadhli.automation.BddTestRunnerApplication.initializeDatabase(BddTestRunnerApplication.java:81)
+	at com.fadhli.automation.BddTestRunnerApplication.main(BddTestRunnerApplication.java:31)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 7 common frames omitted
+2025-09-22 14:36:45.236 [main] ERROR c.f.a.BddTestRunnerApplication - Failed to initialize database
+java.lang.RuntimeException: Database initialization failed
+	at com.fadhli.automation.util.DatabaseUtil.initializeDataSource(DatabaseUtil.java:101)
+	at com.fadhli.automation.util.DatabaseUtil.<init>(DatabaseUtil.java:43)
+	at com.fadhli.automation.util.DatabaseUtil.getInstance(DatabaseUtil.java:52)
+	at com.fadhli.automation.BddTestRunnerApplication.initializeDatabase(BddTestRunnerApplication.java:81)
+	at com.fadhli.automation.BddTestRunnerApplication.main(BddTestRunnerApplication.java:31)
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.fadhli.automation.util.DatabaseUtil.initializeDataSource(DatabaseUtil.java:91)
+	... 4 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 7 common frames omitted
+2025-09-22 14:36:45.236 [main] ERROR c.f.a.BddTestRunnerApplication - Failed to start BDD Test Runner Application
+java.lang.RuntimeException: Database initialization failed. Please check MySQL server and configuration.
+	at com.fadhli.automation.BddTestRunnerApplication.initializeDatabase(BddTestRunnerApplication.java:93)
+	at com.fadhli.automation.BddTestRunnerApplication.main(BddTestRunnerApplication.java:31)
+Caused by: java.lang.RuntimeException: Database initialization failed
+	at com.fadhli.automation.util.DatabaseUtil.initializeDataSource(DatabaseUtil.java:101)
+	at com.fadhli.automation.util.DatabaseUtil.<init>(DatabaseUtil.java:43)
+	at com.fadhli.automation.util.DatabaseUtil.getInstance(DatabaseUtil.java:52)
+	at com.fadhli.automation.BddTestRunnerApplication.initializeDatabase(BddTestRunnerApplication.java:81)
+	... 1 common frames omitted
+Caused by: com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.fadhli.automation.util.DatabaseUtil.initializeDataSource(DatabaseUtil.java:91)
+	... 4 common frames omitted
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 7 common frames omitted
+2025-09-22 14:37:03.572 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 14:37:03.783 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 14:37:03.790 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 14:37:04.343 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 14:37:04.343 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 14:37:04.351 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 14:37:04.367 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 14:37:04.368 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 14:37:04.517 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 14:37:04.610 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 14:37:04.681 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 14:37:04.683 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 14:37:04.684 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 14:37:05.074 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 14:37:05.180 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 14:37:22.662 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 14:37:39.815 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 2
+2025-09-22 14:37:47.929 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Failed login with invalid password (ID: 2)
+2025-09-22 14:38:10.804 [BDDTestRunnerPool housekeeper] WARN  c.zaxxer.hikari.pool.ProxyLeakTask - Connection leak detection triggered for com.mysql.cj.jdbc.ConnectionImpl@332729ad on thread AWT-EventQueue-0, stack trace follows
+java.lang.Exception: Apparent connection leak detected
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:100)
+	at com.fadhli.automation.util.DatabaseUtil.isHealthy(DatabaseUtil.java:254)
+	at com.fadhli.automation.ui.MainWindow.showDatabaseStatus(MainWindow.java:438)
+	at com.fadhli.automation.ui.MainWindow.lambda$createMenuBar$2(MainWindow.java:118)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2314)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:407)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.AbstractButton.doClick(AbstractButton.java:374)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:1029)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(BasicMenuItemUI.java:1073)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6621)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3398)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6386)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4996)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4828)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2025-09-22 14:38:30.399 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Application exiting...
+2025-09-22 14:38:30.430 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 15:29:02.495 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 15:29:02.785 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 15:29:02.790 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 15:29:03.415 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 15:29:03.416 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 15:29:03.427 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:29:03.444 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:29:03.444 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 15:29:03.480 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:29:03.484 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:29:03.488 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:29:03.489 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 15:29:03.490 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 15:29:03.774 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 15:29:03.943 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 15:29:03.951 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:29:04.041 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 0 scenarios
+2025-09-22 15:29:06.163 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Creating new scenario
+2025-09-22 15:30:45.642 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Creating new scenario: Test Scenarion
+2025-09-22 15:30:45.669 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Inserting new scenario: Test Scenarion
+2025-09-22 15:30:45.681 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario inserted with ID: 1
+2025-09-22 15:30:45.681 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario created successfully with ID: 1
+2025-09-22 15:30:45.681 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario created successfully: Test Scenarion
+2025-09-22 15:30:45.697 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:30:45.699 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:30:48.449 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:30:48.449 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:30:48.452 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:30:58.464 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:30:58.464 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:30:58.468 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:31:22.897 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 15:31:22.899 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenarion'
+2025-09-22 15:31:22.901 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 15:31:22.944 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 15:31:22.944 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 15:31:22.944 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenarion
+2025-09-22 15:31:22.963 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:31:22.965 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:31:30.196 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:31:30.196 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:31:30.198 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:31:35.334 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Application exiting...
+2025-09-22 15:31:35.388 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 15:38:23.404 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 15:38:23.571 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 15:38:23.574 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 15:38:23.853 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 15:38:23.853 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 15:38:23.857 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:38:23.865 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:38:23.865 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 15:38:23.895 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:38:23.897 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:38:23.900 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:38:23.902 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 15:38:23.904 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 15:38:24.065 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 15:38:24.130 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 15:38:24.136 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:38:24.177 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:38:46.082 [Thread-2] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 15:39:08.840 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 15:39:08.984 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 15:39:08.987 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 15:39:09.285 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 15:39:09.285 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 15:39:09.289 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:39:09.299 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:39:09.300 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 15:39:09.356 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:39:09.359 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:39:09.362 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:39:09.364 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 15:39:09.365 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 15:39:09.549 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 15:39:09.637 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 15:39:09.654 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:39:09.697 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:39:13.786 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:39:13.787 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:39:13.792 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:39:25.561 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 15:39:25.568 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenarion'
+2025-09-22 15:39:25.571 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 15:39:25.579 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 15:39:25.579 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 15:39:25.580 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenarion
+2025-09-22 15:39:25.598 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:39:25.600 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:39:28.278 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:39:28.279 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:39:28.282 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:39:34.609 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Application exiting...
+2025-09-22 15:39:34.666 [Thread-2] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 15:40:41.768 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 15:40:41.928 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 15:40:41.932 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 15:40:42.313 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 15:40:42.314 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 15:40:42.321 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:40:42.335 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:40:42.336 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 15:40:42.354 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:40:42.356 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:40:42.359 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:40:42.360 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 15:40:42.360 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 15:40:42.514 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 15:40:42.631 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 15:40:42.637 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:40:42.698 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:40:44.029 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:40:44.029 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:40:44.034 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:40:51.895 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 15:40:51.918 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenarion'
+2025-09-22 15:40:51.920 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 15:40:51.928 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 15:40:51.928 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 15:40:51.928 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenarion
+2025-09-22 15:40:51.946 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:40:51.947 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:40:54.128 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:40:54.129 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:40:54.578 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:40:54.580 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:40:55.987 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:40:55.989 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:40:56.142 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:40:56.144 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:41:08.286 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 15:45:15.978 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 15:45:16.162 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 15:45:16.165 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 15:45:16.419 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 15:45:16.420 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 15:45:16.423 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:45:16.436 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:45:16.437 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 15:45:16.450 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:45:16.452 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:45:16.456 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:45:16.457 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 15:45:16.458 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 15:45:16.609 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 15:45:16.741 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 15:45:16.748 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:45:16.812 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:45:20.063 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:45:20.063 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:45:20.065 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:45:20.070 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:45:20.071 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:45:20.073 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 0 steps for scenario ID: 1
+2025-09-22 15:45:26.714 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 15:45:26.735 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenarion'
+2025-09-22 15:45:26.738 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 15:45:26.747 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 15:45:26.747 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-22 15:45:26.749 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 0 steps for scenario ID: 1
+2025-09-22 15:45:26.750 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:45:26.757 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 1
+2025-09-22 15:45:26.758 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 15:45:26.758 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenarion
+2025-09-22 15:45:26.782 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:45:26.785 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:45:30.133 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:45:30.134 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:45:30.134 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:45:30.136 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:45:30.136 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:45:30.140 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 1 steps for scenario ID: 1
+2025-09-22 15:45:36.133 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:45:36.134 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:45:36.134 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:45:36.136 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:45:36.137 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:45:36.139 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 1 steps for scenario ID: 1
+2025-09-22 15:45:39.816 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 15:45:39.817 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenarion'
+2025-09-22 15:45:39.819 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 15:45:39.862 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 15:45:39.863 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-22 15:45:39.866 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 1 steps for scenario ID: 1
+2025-09-22 15:45:39.866 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:45:39.869 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 2
+2025-09-22 15:45:39.869 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:45:39.872 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 3
+2025-09-22 15:45:39.873 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 15:45:39.873 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenarion
+2025-09-22 15:45:39.904 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:45:39.905 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:45:40.936 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:45:40.937 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:45:40.938 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:45:40.940 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:45:40.941 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:45:40.943 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 2 steps for scenario ID: 1
+2025-09-22 15:45:51.287 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Application exiting...
+2025-09-22 15:45:51.339 [Thread-2] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 15:46:50.203 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 15:46:50.364 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 15:46:50.367 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 15:46:50.758 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 15:46:50.758 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 15:46:50.766 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:46:50.779 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:46:50.779 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 15:46:50.798 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:46:50.800 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:46:50.801 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:46:50.803 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 15:46:50.804 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 15:46:50.957 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 15:46:51.064 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 15:46:51.076 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:46:51.131 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:46:53.417 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:46:53.417 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:46:53.417 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:46:53.421 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:46:53.422 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:46:53.425 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 2 steps for scenario ID: 1
+2025-09-22 15:47:40.406 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 15:47:40.421 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenarion'
+2025-09-22 15:47:40.424 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 15:47:40.433 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 15:47:40.433 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-22 15:47:40.437 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 2 steps for scenario ID: 1
+2025-09-22 15:47:40.437 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:47:40.441 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 4
+2025-09-22 15:47:40.442 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:47:40.446 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 5
+2025-09-22 15:47:40.446 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:47:40.448 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 6
+2025-09-22 15:47:40.449 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:47:40.451 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 7
+2025-09-22 15:47:40.451 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:47:40.458 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 8
+2025-09-22 15:47:40.458 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 15:47:40.465 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 9
+2025-09-22 15:47:40.465 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 15:47:40.465 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenarion
+2025-09-22 15:47:40.484 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:47:40.486 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:47:42.264 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 15:47:42.264 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:47:42.264 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:47:42.266 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:47:42.266 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:47:42.267 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 15:47:48.083 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenarion (ID: 1)
+2025-09-22 15:47:48.084 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:47:48.084 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:47:48.085 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:47:48.086 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:47:48.087 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 15:49:45.883 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenarion
+2025-09-22 15:51:02.174 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenarion (ID: 1)
+2025-09-22 15:51:02.175 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:51:02.175 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:51:02.177 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:51:02.177 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:51:02.179 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 15:51:07.164 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenarion
+2025-09-22 15:51:09.773 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Application exiting...
+2025-09-22 15:51:09.835 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 15:57:10.094 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 15:57:10.258 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 15:57:10.261 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 15:57:10.594 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 15:57:10.595 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 15:57:10.601 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:57:10.610 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 15:57:10.610 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 15:57:10.639 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:57:10.641 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:57:10.644 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 15:57:10.645 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 15:57:10.646 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 15:57:10.802 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 15:57:10.879 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 15:57:10.906 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 15:57:10.952 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 15:57:13.910 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenarion (ID: 1)
+2025-09-22 15:57:13.910 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:57:13.910 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:57:13.917 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:57:13.917 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:57:13.922 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 15:57:27.395 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenarion
+2025-09-22 15:57:29.116 [Thread-3] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 15:57:29.250 [Thread-3] INFO  i.g.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.185/win64/chromedriver-win64.zip
+2025-09-22 15:57:31.160 [Thread-3] INFO  i.g.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-win64.zip
+2025-09-22 15:57:31.331 [Thread-3] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 15:57:43.494 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenarion (ID: 1)
+2025-09-22 15:57:43.495 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 15:57:43.495 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 15:57:43.498 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 15:57:43.498 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 15:57:43.501 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 15:57:46.720 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenarion
+2025-09-22 15:57:46.742 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 15:57:46.758 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 15:58:23.589 [Thread-2] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 16:01:41.261 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 16:01:41.420 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 16:01:41.424 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 16:01:41.702 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 16:01:41.703 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 16:01:41.707 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:01:41.715 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:01:41.716 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 16:01:41.789 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:01:41.796 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:01:41.804 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:01:41.805 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 16:01:41.809 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 16:01:41.985 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 16:01:42.074 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 16:01:42.079 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:01:42.124 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:01:45.398 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenarion (ID: 1)
+2025-09-22 16:01:45.398 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:01:45.398 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:01:45.404 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 16:01:45.405 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:01:45.411 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:01:45.605 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenarion
+2025-09-22 16:01:46.243 [Thread-3] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:01:46.294 [Thread-3] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:03:32.778 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 16:03:32.780 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:03:32.781 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:03:32.786 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenarion
+2025-09-22 16:03:32.787 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:03:32.789 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:03:35.634 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 16:03:35.638 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenario'
+2025-09-22 16:03:35.680 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 16:03:35.688 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 16:03:35.689 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-22 16:03:35.692 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 6 steps for scenario ID: 1
+2025-09-22 16:03:35.692 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:03:35.696 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 10
+2025-09-22 16:03:35.696 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:03:35.706 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 11
+2025-09-22 16:03:35.706 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:03:35.708 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 12
+2025-09-22 16:03:35.710 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:03:35.711 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 13
+2025-09-22 16:03:35.712 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:03:35.714 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 14
+2025-09-22 16:03:35.714 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:03:35.718 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 15
+2025-09-22 16:03:35.718 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 16:03:35.719 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenario
+2025-09-22 16:03:35.738 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:03:35.739 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:03:38.034 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 16:03:38.034 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:03:38.034 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:03:38.036 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:03:38.037 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:03:38.039 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:03:46.765 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:03:46.766 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:03:49.562 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:03:49.563 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:03:49.563 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:03:49.566 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:03:49.566 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:03:49.567 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:03:49.617 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:03:49.635 [Thread-9] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:03:49.649 [Thread-9] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:09:18.454 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:09:18.456 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:09:18.456 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:09:18.459 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:09:18.459 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:09:18.460 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:09:18.499 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:09:18.514 [Thread-15] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:09:18.527 [Thread-15] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:13:38.885 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Application exiting...
+2025-09-22 16:13:38.934 [Thread-2] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 16:13:47.658 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 16:13:47.817 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 16:13:47.821 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 16:13:48.234 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 16:13:48.234 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 16:13:48.242 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:13:48.255 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:13:48.255 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 16:13:48.283 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:13:48.286 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:13:48.290 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:13:48.291 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 16:13:48.292 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 16:13:48.512 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 16:13:48.630 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 16:13:48.645 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:13:48.719 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:13:59.251 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:13:59.252 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:13:59.252 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:13:59.259 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:13:59.259 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:13:59.266 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:13:59.492 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:14:00.175 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:14:00.236 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:15:49.159 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 16:16:07.150 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 16:16:07.307 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 16:16:07.313 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 16:16:07.712 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 16:16:07.712 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 16:16:07.718 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:16:07.734 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:16:07.734 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 16:16:07.754 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:16:07.757 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:16:07.760 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:16:07.760 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 16:16:07.762 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 16:16:07.950 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 16:16:08.053 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 16:16:08.063 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:16:08.130 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:16:13.045 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:16:13.046 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:16:13.046 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:16:13.054 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:16:13.054 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:16:13.060 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:16:13.335 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:16:13.972 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:16:14.019 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:17:36.907 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 16:17:36.908 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:17:36.908 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:17:36.911 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:17:36.911 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:17:36.914 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:18:01.509 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 16:18:01.512 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenario'
+2025-09-22 16:18:01.515 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 16:18:01.565 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 16:18:01.566 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-22 16:18:01.571 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 6 steps for scenario ID: 1
+2025-09-22 16:18:01.572 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:18:01.580 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 16
+2025-09-22 16:18:01.580 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:18:01.589 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 17
+2025-09-22 16:18:01.589 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:18:01.593 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 18
+2025-09-22 16:18:01.594 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:18:01.598 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 19
+2025-09-22 16:18:01.598 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:18:01.602 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 20
+2025-09-22 16:18:01.602 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:18:01.605 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 21
+2025-09-22 16:18:01.606 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 16:18:01.606 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenario
+2025-09-22 16:18:01.647 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:18:01.649 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:18:03.413 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 16:18:03.414 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:18:03.414 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:18:03.416 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:18:03.417 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:18:03.418 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:18:08.074 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:18:08.074 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:18:08.074 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:18:08.077 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:18:08.077 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:18:08.079 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:18:08.141 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:18:08.168 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:18:08.186 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:19:35.364 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 16:19:42.004 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 16:19:42.145 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 16:19:42.150 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 16:19:42.486 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 16:19:42.486 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 16:19:42.494 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:19:42.506 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:19:42.506 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 16:19:42.523 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:19:42.532 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:19:42.534 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:19:42.535 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 16:19:42.536 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 16:19:42.691 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 16:19:42.793 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 16:19:42.802 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:19:42.868 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:19:44.997 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:19:44.997 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:19:44.997 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:19:45.004 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:19:45.005 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:19:45.012 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:19:45.259 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:19:45.862 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:19:45.910 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:20:29.582 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-22 16:20:35.360 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-22 16:20:35.542 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-22 16:20:35.546 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-22 16:20:35.923 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-22 16:20:35.923 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-22 16:20:35.930 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:20:35.944 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-22 16:20:35.944 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-22 16:20:35.999 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:20:36.000 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:20:36.002 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-22 16:20:36.003 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-22 16:20:36.003 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-22 16:20:36.203 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-22 16:20:36.328 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-22 16:20:36.338 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:20:36.417 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:20:40.905 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:20:40.906 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:20:40.906 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:20:40.913 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:20:40.914 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:20:40.925 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:20:41.188 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:20:41.842 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:20:41.901 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:21:24.885 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 16:21:24.886 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:21:24.886 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:21:24.889 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:21:24.889 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:21:24.891 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:22:20.067 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 16:22:20.071 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenario'
+2025-09-22 16:22:20.076 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 16:22:20.130 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 16:22:20.131 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-22 16:22:20.141 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 6 steps for scenario ID: 1
+2025-09-22 16:22:20.141 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:22:20.154 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 22
+2025-09-22 16:22:20.155 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:22:20.163 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 23
+2025-09-22 16:22:20.164 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:22:20.172 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 24
+2025-09-22 16:22:20.173 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:22:20.181 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 25
+2025-09-22 16:22:20.181 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:22:20.188 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 26
+2025-09-22 16:22:20.190 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:22:20.197 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 27
+2025-09-22 16:22:20.198 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 16:22:20.198 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenario
+2025-09-22 16:22:20.432 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:22:20.436 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:22:22.718 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:22:22.720 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:22:22.720 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:22:22.722 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:22:22.723 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:22:22.725 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:22:22.775 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:22:22.798 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:22:22.814 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:24:25.963 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 16:24:25.964 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:24:25.964 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:24:25.967 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:24:25.967 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:24:25.969 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:25:00.495 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 16:25:00.497 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenario'
+2025-09-22 16:25:00.499 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 16:25:00.542 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 16:25:00.543 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-22 16:25:00.547 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 6 steps for scenario ID: 1
+2025-09-22 16:25:00.547 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:25:00.551 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 28
+2025-09-22 16:25:00.551 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:25:00.556 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 29
+2025-09-22 16:25:00.556 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:25:00.567 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 30
+2025-09-22 16:25:00.568 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:25:00.572 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 31
+2025-09-22 16:25:00.572 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:25:00.576 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 32
+2025-09-22 16:25:00.576 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:25:00.581 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 33
+2025-09-22 16:25:00.581 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 16:25:00.581 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenario
+2025-09-22 16:25:00.657 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:25:00.660 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:25:02.937 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:25:02.938 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:25:02.938 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:25:02.939 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:25:02.941 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:25:02.943 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:25:02.995 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:25:03.014 [Thread-13] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:25:03.027 [Thread-13] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:26:56.929 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:26:56.933 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:27:08.658 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-22 16:27:08.658 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:27:08.658 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:27:08.661 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:27:08.661 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:27:08.664 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:27:23.169 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-22 16:27:23.172 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenario'
+2025-09-22 16:27:23.174 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-22 16:27:23.216 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-22 16:27:23.217 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-22 16:27:23.221 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 6 steps for scenario ID: 1
+2025-09-22 16:27:23.221 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:27:23.225 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 34
+2025-09-22 16:27:23.225 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:27:23.230 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 35
+2025-09-22 16:27:23.230 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:27:23.241 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 36
+2025-09-22 16:27:23.242 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:27:23.246 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 37
+2025-09-22 16:27:23.246 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:27:23.249 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 38
+2025-09-22 16:27:23.249 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-22 16:27:23.254 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 39
+2025-09-22 16:27:23.254 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-22 16:27:23.254 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenario
+2025-09-22 16:27:23.315 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-22 16:27:23.318 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 1 scenarios
+2025-09-22 16:27:25.729 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-22 16:27:25.729 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-22 16:27:25.730 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-22 16:27:25.732 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-22 16:27:25.733 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-22 16:27:25.734 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-22 16:27:25.794 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-22 16:27:25.810 [Thread-19] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.185 (resolved driver for Chrome 140)
+2025-09-22 16:27:25.823 [Thread-19] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.185\chromedriver.exe
+2025-09-22 16:29:32.623 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Application exiting...
+2025-09-22 16:29:32.712 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed

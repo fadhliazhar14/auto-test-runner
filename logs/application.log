@@ -1,0 +1,526 @@
+2025-09-24 13:45:23.859 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-24 13:45:24.115 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-24 13:45:24.122 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-24 13:45:24.744 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-24 13:45:24.745 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-24 13:45:24.756 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 13:45:24.775 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 13:45:24.775 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-24 13:45:24.837 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 13:45:24.840 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 13:45:24.845 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 13:45:24.845 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-24 13:45:24.846 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-24 13:45:25.371 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-24 13:45:25.508 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-24 13:45:25.520 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-24 13:45:25.616 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios
+2025-09-24 13:46:44.357 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-24 13:46:44.360 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios
+2025-09-24 13:46:55.396 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-24 13:47:04.345 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-24 13:47:04.646 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-24 13:47:04.650 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-24 13:47:05.171 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-24 13:47:05.171 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-24 13:47:05.181 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 13:47:05.196 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 13:47:05.198 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-24 13:47:05.222 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 13:47:05.225 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 13:47:05.228 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 13:47:05.229 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-24 13:47:05.230 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-24 13:47:05.580 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-24 13:47:05.649 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-24 13:47:05.652 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-24 13:47:05.705 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios
+2025-09-24 13:47:29.968 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-24 13:47:29.968 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 13:47:29.969 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 13:47:30.024 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 13:47:30.025 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 13:47:30.066 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 13:47:40.839 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 2
+2025-09-24 13:47:40.839 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 2
+2025-09-24 13:47:40.840 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 2
+2025-09-24 13:47:40.843 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test upload
+2025-09-24 13:47:40.843 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 2
+2025-09-24 13:47:40.846 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 4 steps for scenario ID: 2
+2025-09-24 13:51:31.337 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-24 13:51:31.337 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 13:51:31.338 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 13:51:31.340 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 13:51:31.341 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 13:51:31.343 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 13:51:38.535 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-24 13:51:38.535 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 13:51:38.535 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 13:51:38.539 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 13:51:38.539 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 13:51:38.541 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 13:51:38.773 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-24 13:51:41.218 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 13:51:41.375 [Thread-1] INFO  i.g.bonigarcia.wdm.online.Downloader - Downloading https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.207/win64/chromedriver-win64.zip
+2025-09-24 13:51:43.051 [Thread-1] INFO  i.g.bonigarcia.wdm.online.Downloader - Extracting driver from compressed file chromedriver-win64.zip
+2025-09-24 13:51:43.379 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 13:51:45.487 [Thread-1] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 13:51:45.490 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 13:51:45.490 [Thread-1] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 13:51:45.491 [Thread-1] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 13:51:45.493 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Open page: https://www.google.com
+2025-09-24 13:51:47.814 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Type 'OpenAI' into: id:APjFqb
+2025-09-24 13:51:49.571 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 13:51:53.092 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Click element: (//input[@name='btnK'])[1]
+2025-09-24 13:51:54.867 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Wait for 30 seconds
+2025-09-24 13:52:26.373 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Verify element tag:h3 contains text: OpenAI
+2025-09-24 13:52:36.653 [Thread-1] ERROR c.f.automation.util.ElementHelper - Failed to find element with locator: tag:h3
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.tagName: h3 (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:40)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:28)
+	at com.fadhli.automation.steps.GenericSteps.iShouldSeeOnElement(GenericSteps.java:192)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:380)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"tag name","selector":"h3"}
+  (Session info: chrome=140.0.7339.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8df22db217b69e8f4e62456d2ba0b2c1, findElement {using=tag name, value=h3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65456}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65456/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8df22db217b69e8f4e62456d2ba0b2c1
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:204)
+	... 9 common frames omitted
+2025-09-24 13:52:36.993 [Thread-1] INFO  c.f.automation.util.ScreenshotUtil - Screenshot captured: C:\Users\User\Fadhli_DIR\BelajarJava\auto-test-runner\screenshots\failure_text_not_found_20250924_135236_667.png
+2025-09-24 13:52:37.994 [Thread-1] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 13:57:05.096 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-24 14:12:12.804 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-24 14:12:12.948 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-24 14:12:12.954 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-24 14:12:13.358 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-24 14:12:13.359 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-24 14:12:13.364 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 14:12:13.376 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 14:12:13.376 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-24 14:12:13.433 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:12:13.435 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:12:13.436 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:12:13.438 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-24 14:12:13.439 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-24 14:12:13.652 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-24 14:12:13.770 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-24 14:12:13.777 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-24 14:12:13.838 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios
+2025-09-24 14:12:16.161 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-24 14:12:16.162 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:12:16.162 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:12:16.169 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:12:16.169 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:12:16.176 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:12:21.280 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-24 14:12:21.306 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenario'
+2025-09-24 14:12:21.313 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-24 14:12:21.342 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-24 14:12:21.343 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-24 14:12:21.350 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 6 steps for scenario ID: 1
+2025-09-24 14:12:21.351 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:12:21.361 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 117
+2025-09-24 14:12:21.362 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:12:21.366 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 118
+2025-09-24 14:12:21.366 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:12:21.370 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 119
+2025-09-24 14:12:21.371 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:12:21.376 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 120
+2025-09-24 14:12:21.376 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:12:21.380 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 121
+2025-09-24 14:12:21.381 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:12:21.386 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 122
+2025-09-24 14:12:21.386 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-24 14:12:21.386 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenario
+2025-09-24 14:12:21.440 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-24 14:12:21.443 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios
+2025-09-24 14:12:23.862 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test upload (ID: 2)
+2025-09-24 14:12:23.864 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 2
+2025-09-24 14:12:23.864 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 2
+2025-09-24 14:12:23.868 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test upload
+2025-09-24 14:12:23.868 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 2
+2025-09-24 14:12:23.870 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 4 steps for scenario ID: 2
+2025-09-24 14:12:24.034 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test upload
+2025-09-24 14:12:24.915 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 14:12:24.951 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 14:12:26.726 [Thread-1] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 14:12:26.728 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 14:12:26.729 [Thread-1] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 14:12:26.729 [Thread-1] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 14:12:26.731 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Open page: https://dev.osacademy.net/Explorations_Dhli/TestExcel
+2025-09-24 14:12:29.850 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Wait for 3 seconds
+2025-09-24 14:12:34.372 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Click element: id:Upload1
+2025-09-24 14:12:36.245 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 14:12:40.126 [Thread-1] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 14:12:43.159 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-24 14:12:43.159 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:12:43.159 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:12:43.161 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:12:43.162 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:12:43.164 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:12:43.227 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-24 14:12:43.253 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 14:12:43.270 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 14:12:44.543 [Thread-7] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 14:12:44.544 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 14:12:44.544 [Thread-7] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 14:12:44.544 [Thread-7] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 14:12:44.544 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Open page: https://www.google.com
+2025-09-24 14:12:47.697 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Type 'OpenAI' into: id:APjFqb
+2025-09-24 14:12:49.381 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 14:12:52.888 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Click element: (//input[@name='btnK'])[1]
+2025-09-24 14:12:54.784 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Wait for 30 seconds
+2025-09-24 14:13:26.304 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Verify element tag:h3 contains text: OpenAAAI
+2025-09-24 14:13:36.794 [Thread-7] ERROR c.f.automation.util.ElementHelper - Failed to find element with locator: tag:h3
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.tagName: h3 (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:40)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:28)
+	at com.fadhli.automation.steps.GenericSteps.iShouldSeeOnElement(GenericSteps.java:192)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:391)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:328)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:270)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"tag name","selector":"h3"}
+  (Session info: chrome=140.0.7339.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [43e2030c55575898af381c64dff48bd4, findElement {using=tag name, value=h3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60387}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60387/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 43e2030c55575898af381c64dff48bd4
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:204)
+	... 9 common frames omitted
+2025-09-24 14:13:37.103 [Thread-7] INFO  c.f.automation.util.ScreenshotUtil - Screenshot captured: C:\Users\User\Fadhli_DIR\BelajarJava\auto-test-runner\screenshots\failure_text_not_found_20250924_141336_807.png
+2025-09-24 14:13:37.460 [Thread-7] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 14:13:56.039 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-24 14:13:56.039 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:13:56.039 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:13:56.042 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:13:56.042 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:13:56.044 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:13:56.103 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-24 14:13:56.123 [Thread-13] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 14:13:56.134 [Thread-13] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 14:13:57.148 [Thread-13] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 14:13:57.148 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 14:13:57.149 [Thread-13] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 14:13:57.149 [Thread-13] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 14:13:57.151 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Open page: https://www.google.com
+2025-09-24 14:14:01.848 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Type 'OpenAI' into: id:APjFqb
+2025-09-24 14:14:05.133 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 14:14:08.636 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Click element: (//input[@name='btnK'])[1]
+2025-09-24 14:14:10.414 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Wait for 30 seconds
+2025-09-24 14:14:41.938 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Verify element tag:h3 contains text: OpenAAAI
+2025-09-24 14:14:52.327 [Thread-13] ERROR c.f.automation.util.ElementHelper - Failed to find element with locator: tag:h3
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.tagName: h3 (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:40)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:28)
+	at com.fadhli.automation.steps.GenericSteps.iShouldSeeOnElement(GenericSteps.java:192)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:391)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:328)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:270)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"tag name","selector":"h3"}
+  (Session info: chrome=140.0.7339.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cd99e445f96cae09a8754083e09eb13c, findElement {using=tag name, value=h3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52471}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52471/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cd99e445f96cae09a8754083e09eb13c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:204)
+	... 9 common frames omitted
+2025-09-24 14:14:52.583 [Thread-13] INFO  c.f.automation.util.ScreenshotUtil - Screenshot captured: C:\Users\User\Fadhli_DIR\BelajarJava\auto-test-runner\screenshots\failure_text_not_found_20250924_141452_329.png
+2025-09-24 14:14:52.991 [Thread-13] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 14:14:55.705 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-24 14:14:55.705 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:14:55.705 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:14:55.708 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:14:55.708 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:14:55.711 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:14:55.778 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-24 14:14:55.812 [Thread-19] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 14:14:55.836 [Thread-19] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 14:14:56.740 [Thread-19] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 14:14:56.741 [Thread-19] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 14:14:56.741 [Thread-19] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 14:14:56.741 [Thread-19] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 14:14:56.742 [Thread-19] INFO  c.f.automation.steps.GenericSteps - Open page: https://www.google.com
+2025-09-24 14:14:59.162 [Thread-19] INFO  c.f.automation.steps.GenericSteps - Type 'OpenAI' into: id:APjFqb
+2025-09-24 14:15:01.041 [Thread-19] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 14:15:04.562 [Thread-19] INFO  c.f.automation.steps.GenericSteps - Click element: (//input[@name='btnK'])[1]
+2025-09-24 14:15:06.293 [Thread-19] INFO  c.f.automation.steps.GenericSteps - Wait for 30 seconds
+2025-09-24 14:15:37.810 [Thread-19] INFO  c.f.automation.steps.GenericSteps - Verify element tag:h3 contains text: OpenAAAI
+2025-09-24 14:15:40.838 [Thread-19] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 14:16:34.575 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-24 14:16:34.576 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:16:34.576 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:16:34.578 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:16:34.579 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:16:34.580 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:16:34.669 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-24 14:16:34.722 [Thread-25] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 14:16:34.756 [Thread-25] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 14:16:35.729 [Thread-25] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 14:16:35.730 [Thread-25] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 14:16:35.730 [Thread-25] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 14:16:35.730 [Thread-25] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 14:16:35.732 [Thread-25] INFO  c.f.automation.steps.GenericSteps - Open page: https://www.google.com
+2025-09-24 14:16:38.163 [Thread-25] INFO  c.f.automation.steps.GenericSteps - Type 'OpenAI' into: id:APjFqb
+2025-09-24 14:16:39.796 [Thread-25] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 14:16:43.305 [Thread-25] INFO  c.f.automation.steps.GenericSteps - Click element: (//input[@name='btnK'])[1]
+2025-09-24 14:16:45.124 [Thread-25] INFO  c.f.automation.steps.GenericSteps - Wait for 30 seconds
+2025-09-24 14:17:16.638 [Thread-25] INFO  c.f.automation.steps.GenericSteps - Verify element tag:h3 contains text: OpenAAAI
+2025-09-24 14:17:18.075 [Thread-25] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 14:25:06.344 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-24 14:25:57.079 [main] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-24 14:25:57.257 [main] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-24 14:25:57.263 [main] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-24 14:25:57.777 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-24 14:25:57.777 [main] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-24 14:25:57.784 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 14:25:57.796 [main] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 14:25:57.797 [main] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-24 14:25:57.856 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:25:57.858 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:25:57.860 [main] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:25:57.862 [main] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-24 14:25:57.863 [main] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-24 14:25:58.070 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-24 14:25:58.167 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-24 14:25:58.173 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-24 14:25:58.247 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios
+2025-09-24 14:26:02.788 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-24 14:26:02.790 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:26:02.790 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:26:02.797 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:26:02.798 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:26:02.805 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:26:03.058 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-24 14:26:04.018 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 14:26:04.051 [Thread-1] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 14:26:05.802 [Thread-1] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 14:26:05.803 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 14:26:05.803 [Thread-1] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 14:26:05.804 [Thread-1] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 14:26:05.806 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Open page: https://www.google.com
+2025-09-24 14:26:08.403 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Type 'OpenAI' into: id:APjFqb
+2025-09-24 14:26:10.125 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 14:26:13.653 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Click element: (//input[@name='btnK'])[1]
+2025-09-24 14:26:15.641 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Wait for 30 seconds
+2025-09-24 14:26:47.164 [Thread-1] INFO  c.f.automation.steps.GenericSteps - Verify element tag:h3 contains text: OpenAAAI
+2025-09-24 14:26:57.178 [Thread-1] ERROR c.f.automation.util.ElementHelper - Failed to find element with locator: tag:h3
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.tagName: h3 (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:40)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:28)
+	at com.fadhli.automation.steps.GenericSteps.iShouldSeeOnElement(GenericSteps.java:192)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:411)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:340)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:270)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"tag name","selector":"h3"}
+  (Session info: chrome=140.0.7339.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [045f9f5d1e9feb2c000685af8b2b81b9, findElement {using=tag name, value=h3}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50433}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50433/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 045f9f5d1e9feb2c000685af8b2b81b9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:204)
+	... 9 common frames omitted
+2025-09-24 14:26:57.540 [Thread-1] INFO  c.f.automation.util.ScreenshotUtil - Screenshot captured: C:\Users\User\Fadhli_DIR\BelajarJava\auto-test-runner\screenshots\failure_text_not_found_20250924_142657_194.png
+2025-09-24 14:26:58.014 [Thread-1] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 14:27:07.773 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-24 14:27:07.773 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:27:07.773 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:27:07.776 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:27:07.777 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:27:07.779 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:27:07.869 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-24 14:27:07.910 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 14:27:07.933 [Thread-7] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 14:27:09.055 [Thread-7] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 14:27:09.056 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 14:27:09.056 [Thread-7] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 14:27:09.056 [Thread-7] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 14:27:09.057 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Open page: https://www.google.com
+2025-09-24 14:27:11.489 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Type 'OpenAI' into: id:APjFqb
+2025-09-24 14:27:13.160 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 14:27:16.692 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Click element: (//input[@name='btnK'])[1]
+2025-09-24 14:27:20.903 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Wait for 30 seconds
+2025-09-24 14:27:52.438 [Thread-7] INFO  c.f.automation.steps.GenericSteps - Verify element tag:h3 contains text: OpenAAAI
+2025-09-24 14:27:53.232 [Thread-7] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 14:29:22.794 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-24 14:29:22.794 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:29:22.795 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:29:22.796 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:29:22.797 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:29:22.798 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:29:28.565 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Updating scenario ID: 1
+2025-09-24 14:29:28.569 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by feature 'Test Feature' and name 'Test Scenario'
+2025-09-24 14:29:28.573 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Updating scenario ID: 1
+2025-09-24 14:29:28.587 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Scenario updated successfully
+2025-09-24 14:29:28.587 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleting steps by scenario ID: 1
+2025-09-24 14:29:28.593 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Deleted 6 steps for scenario ID: 1
+2025-09-24 14:29:28.593 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:29:28.602 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 123
+2025-09-24 14:29:28.602 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:29:28.608 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 124
+2025-09-24 14:29:28.608 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:29:28.612 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 125
+2025-09-24 14:29:28.613 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:29:28.617 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 126
+2025-09-24 14:29:28.618 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:29:28.621 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 127
+2025-09-24 14:29:28.622 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Inserting new step for scenario ID: 1
+2025-09-24 14:29:28.625 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Step inserted with ID: 128
+2025-09-24 14:29:28.625 [AWT-EventQueue-0] INFO  c.f.a.s.impl.ScenarioServiceImpl - Scenario updated successfully
+2025-09-24 14:29:28.625 [AWT-EventQueue-0] INFO  c.f.automation.ui.ScenarioFormDialog - Scenario updated successfully: Test Scenario
+2025-09-24 14:29:28.655 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios
+2025-09-24 14:29:28.657 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios
+2025-09-24 14:29:30.774 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Running scenario: Test Scenario (ID: 1)
+2025-09-24 14:29:30.774 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:29:30.774 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:29:30.776 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:29:30.777 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:29:30.779 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:29:30.839 [AWT-EventQueue-0] INFO  c.f.a.ui.ExecutionConsoleDialog - Starting test execution for scenario: Test Scenario
+2025-09-24 14:29:30.857 [Thread-13] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 140.0.7339.207 (resolved driver for Chrome 140)
+2025-09-24 14:29:30.866 [Thread-13] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\User\.cache\selenium\chromedriver\win64\140.0.7339.207\chromedriver.exe
+2025-09-24 14:29:31.790 [Thread-13] INFO  c.f.automation.util.DriverProvider - WebDriver initialized successfully: CHROME (headless: false)
+2025-09-24 14:29:31.790 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Setting up WebDriver for test execution
+2025-09-24 14:29:31.790 [Thread-13] WARN  c.f.automation.util.DriverProvider - WebDriver already initialized for current thread
+2025-09-24 14:29:31.790 [Thread-13] INFO  c.f.automation.steps.GenericSteps - WebDriver initialized successfully
+2025-09-24 14:29:31.791 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Open page: https://www.google.com
+2025-09-24 14:29:34.406 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Type 'OpenAI' into: id:APjFqb
+2025-09-24 14:29:36.197 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Wait for 2 seconds
+2025-09-24 14:29:39.718 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Click element: (//input[@name='btnK'])[1]
+2025-09-24 14:29:41.517 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Wait for 30 seconds
+2025-09-24 14:30:13.027 [Thread-13] INFO  c.f.automation.steps.GenericSteps - Verify element tag:h3 contains text: OpenAI
+2025-09-24 14:30:15.016 [Thread-13] INFO  c.f.automation.util.DriverProvider - WebDriver quit successfully
+2025-09-24 14:31:31.818 [Thread-0] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed
+2025-09-24 14:39:31.549 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Starting BDD Test Runner Application...
+2025-09-24 14:39:31.740 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Initializing database connection...
+2025-09-24 14:39:31.743 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database properties loaded from database.properties
+2025-09-24 14:39:32.018 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection pool initialized successfully
+2025-09-24 14:39:32.019 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database URL: jdbc:mysql://localhost:3306/bdd_test_runner?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&serverTimezone=UTC
+2025-09-24 14:39:32.024 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 14:39:32.034 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database connection test successful
+2025-09-24 14:39:32.034 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Initializing database schema...
+2025-09-24 14:39:32.060 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS scenario ( id BIGINT AUTO_INCREMENT PRIMARY KEY, feature_name VARCHAR(255) NOT NULL, scenario_name VARCHAR(255) NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, UNIQUE KEY unique_scenario (feature_name, scenario_name) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:39:32.062 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS step ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, step_type VARCHAR(10) NOT NULL, step_text TEXT NOT NULL, step_order INT NOT NULL, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_order (scenario_id, step_order) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:39:32.065 [com.fadhli.automation.BddTestRunnerApplication.main()] DEBUG c.f.automation.util.DatabaseUtil - Executed: CREATE TABLE IF NOT EXISTS execution_result ( id BIGINT AUTO_INCREMENT PRIMARY KEY, scenario_id BIGINT NOT NULL, status VARCHAR(20) NOT NULL, log_path VARCHAR(500), screenshot_path VARCHAR(500), error_message TEXT, execution_time_ms BIGINT DEFAULT 0, executed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (scenario_id) REFERENCES scenario(id) ON DELETE CASCADE, INDEX idx_scenario_executed (scenario_id, executed_at DESC) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+2025-09-24 14:39:32.066 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.automation.util.DatabaseUtil - Database schema initialized successfully
+2025-09-24 14:39:32.067 [com.fadhli.automation.BddTestRunnerApplication.main()] INFO  c.f.a.BddTestRunnerApplication - Database initialized successfully
+2025-09-24 14:39:32.365 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Main window initialized successfully
+2025-09-24 14:39:32.465 [AWT-EventQueue-0] INFO  c.f.a.BddTestRunnerApplication - BDD Test Runner Application started successfully
+2025-09-24 14:39:32.470 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios with step count
+2025-09-24 14:39:32.565 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios with step count
+2025-09-24 14:39:37.857 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 2
+2025-09-24 14:39:37.858 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 2
+2025-09-24 14:39:37.859 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 2
+2025-09-24 14:39:37.868 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test upload
+2025-09-24 14:39:37.868 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 2
+2025-09-24 14:39:37.877 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 4 steps for scenario ID: 2
+2025-09-24 14:39:49.057 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Editing scenario with ID: 1
+2025-09-24 14:39:49.058 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding complete scenario by ID: 1
+2025-09-24 14:39:49.058 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding scenario by ID: 1
+2025-09-24 14:39:49.061 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found scenario: Test Scenario
+2025-09-24 14:39:49.062 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Finding steps by scenario ID: 1
+2025-09-24 14:39:49.064 [AWT-EventQueue-0] DEBUG c.f.automation.dao.impl.StepDaoImpl - Found 6 steps for scenario ID: 1
+2025-09-24 14:40:06.760 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Finding all scenarios with step count
+2025-09-24 14:40:06.765 [AWT-EventQueue-0] DEBUG c.f.a.dao.impl.ScenarioDaoImpl - Found 2 scenarios with step count
+2025-09-24 14:40:08.189 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Creating new scenario
+2025-09-24 14:40:24.477 [AWT-EventQueue-0] INFO  com.fadhli.automation.ui.MainWindow - Application exiting...
+2025-09-24 14:40:24.533 [Thread-2] INFO  c.f.automation.util.DatabaseUtil - Database connection pool closed

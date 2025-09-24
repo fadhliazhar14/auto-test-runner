@@ -1,0 +1,262 @@
+2025-09-23 13:43:28.688 - Step matching/execution error
+java.lang.RuntimeException: Clickable element not found: (//input[@name='btnK'])[1]
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:70)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:53)
+	at com.fadhli.automation.steps.GenericSteps.iClickOnElement(GenericSteps.java:79)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:347)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//input[@name='btnK'])[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58578}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58578/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f713c2eb32c45aa79078cd1adf7037d3
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:65)
+	... 8 common frames omitted
+2025-09-23 13:46:05.014 - Step matching/execution error
+java.lang.RuntimeException: Clickable element not found: (//input[@name='btnK'])[1]
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:70)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:53)
+	at com.fadhli.automation.steps.GenericSteps.iClickOnElement(GenericSteps.java:79)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:347)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//input[@name='btnK'])[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55947}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55947/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f4cd287892362645e5f1cb7278ee7db0
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:65)
+	... 8 common frames omitted
+2025-09-23 13:46:33.197 - Step matching/execution error
+java.lang.RuntimeException: Clickable element not found: (//input[@name='btnK'])[1]
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:70)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:53)
+	at com.fadhli.automation.steps.GenericSteps.iClickOnElement(GenericSteps.java:79)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:347)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//input[@name='btnK'])[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61494}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61494/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c8340604b1c0813d86c38e5f672b7e57
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:65)
+	... 8 common frames omitted
+2025-09-23 13:54:51.648 - Step matching/execution error
+java.lang.RuntimeException: Element not found: name=q
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:45)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:28)
+	at com.fadhli.automation.steps.GenericSteps.iTypeIntoElement(GenericSteps.java:129)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:360)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: name=q (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:40)
+	... 8 common frames omitted
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#name\=q"}
+  (Session info: chrome=140.0.7339.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [114c52426e962c83a003c5766a9d5a64, findElement {using=id, value=name=q}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49681}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49681/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 114c52426e962c83a003c5766a9d5a64
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:204)
+	... 9 common frames omitted
+2025-09-23 13:56:18.595 - Step matching/execution error
+java.lang.RuntimeException: Element not found: id=APjFqb
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:45)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:28)
+	at com.fadhli.automation.steps.GenericSteps.iTypeIntoElement(GenericSteps.java:129)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:360)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: id=APjFqb (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findElement(ElementHelper.java:40)
+	... 8 common frames omitted
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#id\=APjFqb"}
+  (Session info: chrome=140.0.7339.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4109c9f1375bfc661504fac472e33659, findElement {using=id, value=id=APjFqb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58727}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58727/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4109c9f1375bfc661504fac472e33659
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:204)
+	... 9 common frames omitted
+2025-09-23 14:19:23.481 - Step matching/execution error
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input class="gNO89b" value="Penelusuran Google" aria-label="Penelusuran Google" name="btnK" role="button" tabindex="0" type="submit" data-ved="0ahUKEwirkrCFrO6PAxVU1jgGHdzhK60Q4dUDCA4"> is not clickable at point (80, 18). Other element would receive the click: <header class="gb_y gb_H gb_Bd" id="gb" role="none">...</header>
+  (Session info: chrome=140.0.7339.128)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2bbe003e51ef5480bb3752710daf27a8, clickElement {id=f.1E6826DC7D63B8C1D9665C38968C6497.d.427095D849C50C6652D8B7B8C4BC1C39.e.40}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49672}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49672/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (2bbe003e51ef5480bb3752710daf27a8)] -> xpath: (//input[@name='btnK'])[1]]
+Session ID: 2bbe003e51ef5480bb3752710daf27a8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at com.fadhli.automation.steps.GenericSteps.iClickOnElement(GenericSteps.java:80)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:347)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+2025-09-23 15:26:38.836 - Step matching/execution error
+java.lang.RuntimeException: Clickable element not found: (//input[@type='file'])[1]
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:70)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:53)
+	at com.fadhli.automation.steps.GenericSteps.iClickOnElement(GenericSteps.java:79)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:347)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: (//input[@type='file'])[1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51590}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51590/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6ea981d7d1f4a0395a9d584e4067f8fc
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:65)
+	... 8 common frames omitted
+2025-09-23 15:27:25.449 - Step matching/execution error
+java.lang.RuntimeException: Clickable element not found: (//input[@type='file']
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:70)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:53)
+	at com.fadhli.automation.steps.GenericSteps.iClickOnElement(GenericSteps.java:79)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:347)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression (//input[@type='file'] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '(//input[@type='file']' is not a valid XPath expression.
+  (Session info: chrome=140.0.7339.128)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d034ab454af309014375d31506c51ab5, findElement {using=xpath, value=(//input[@type='file']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60569}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60569/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d034ab454af309014375d31506c51ab5
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:204)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:65)
+	... 8 common frames omitted
+2025-09-23 15:32:17.201 - Step matching/execution error
+java.lang.RuntimeException: Clickable element not found: css:input[type=file]
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:70)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:53)
+	at com.fadhli.automation.steps.GenericSteps.iClickOnElement(GenericSteps.java:79)
+	at com.fadhli.automation.executor.CucumberTestEngine.matchAndExecuteStep(CucumberTestEngine.java:347)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeIndividualStep(CucumberTestEngine.java:317)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeCucumberTest(CucumberTestEngine.java:233)
+	at com.fadhli.automation.executor.CucumberTestEngine.executeScenario(CucumberTestEngine.java:111)
+	at com.fadhli.automation.ui.ExecutionConsoleDialog.lambda$startRealExecution$7(ExecutionConsoleDialog.java:266)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.cssSelector: input[type=file] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58414}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58414/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b138377a6157ab25fe602338258a6a32
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fadhli.automation.util.ElementHelper.findClickableElement(ElementHelper.java:65)
+	... 8 common frames omitted

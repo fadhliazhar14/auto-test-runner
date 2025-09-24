@@ -1,0 +1,66 @@
+=== Cucumber BDD Test Execution Log ===
+Feature: Test Feature
+Scenario: Test Scenario
+Execution Time: 21,89s
+Status: FAIL
+Timestamp: 2025-09-23T13:46:33.566304500
+Test Framework: Cucumber + Selenium WebDriver
+
+=== Execution Log ===
+[13:46:11] === Starting Cucumber BDD Test Execution ===
+[13:46:11] Feature: Test Feature
+[13:46:11] Scenario: Test Scenario
+[13:46:11] Steps: 6
+[13:46:11] 
+[13:46:11] Generated feature file: scenario_1_Test_Scenario.feature
+[13:46:11] Feature content:
+[13:46:11]   Feature: Test Feature
+[13:46:11]   
+[13:46:11]     Scenario: Test Scenario
+[13:46:11]       Given I open the page "https://www.google.com"
+[13:46:11]       When I type "TEST" into element search
+[13:46:11]       And I wait for 2 seconds
+[13:46:11]       And I click on element (//input[@name='btnK'])[1]
+[13:46:11]       Then I click on element "(//input[@name='btnK'])[1]"
+[13:46:11]       And I should see text "TESST" on element "h3"
+[13:46:11] 
+[13:46:11] 🚀 Starting REAL Selenium WebDriver execution...
+[13:46:11] 🔧 Configuring Selenium WebDriver...
+[13:46:11] ⚙️ Browser: Chrome (GUI Mode)
+[13:46:11] ⏱️ Timeout: 15 seconds
+[13:46:11] 
+[13:46:12] ✅ WebDriver initialized successfully!
+[13:46:12] 🔄 Test setup completed
+[13:46:12] 📋 Executing 6 test steps...
+[13:46:12] 
+[13:46:12] ➡️ Step 1/6: Given I open the page "https://www.google.com"
+[13:46:12] 🔍 Parsing step: I open the page "https://www.google.com"
+[13:46:14] ✅ Step PASSED
+[13:46:16] 
+[13:46:16] ➡️ Step 2/6: When I type "TEST" into element search
+[13:46:16] 🔍 Parsing step: I type "TEST" into element search
+[13:46:16] ⚠️ Unknown step pattern: I type "TEST" into element search
+[13:46:16] 📝 Skipping step (not implemented)
+[13:46:16] ✅ Step PASSED
+[13:46:17] 
+[13:46:17] ➡️ Step 3/6: And I wait for 2 seconds
+[13:46:17] 🔍 Parsing step: I wait for 2 seconds
+[13:46:19] ✅ Step PASSED
+[13:46:21] 
+[13:46:21] ➡️ Step 4/6: And I click on element (//input[@name='btnK'])[1]
+[13:46:21] 🔍 Parsing step: I click on element (//input[@name='btnK'])[1]
+[13:46:21] ⚠️ Unknown step pattern: I click on element (//input[@name='btnK'])[1]
+[13:46:21] 📝 Skipping step (not implemented)
+[13:46:21] ✅ Step PASSED
+[13:46:22] 
+[13:46:22] ➡️ Step 5/6: Then I click on element "(//input[@name='btnK'])[1]"
+[13:46:22] 🔍 Parsing step: I click on element "(//input[@name='btnK'])[1]"
+[13:46:33] ❌ Step execution failed: Clickable element not found: (//input[@name='btnK'])[1]
+[13:46:33] ❌ Step FAILED
+[13:46:33] === Test Execution Summary ===
+[13:46:33] ❌ TEST FAILED!
+[13:46:33] 🚨 Failed at step 5/6
+[13:46:33] 🧩 Cleaning up test resources...
+
+=== Error Details ===
+Test execution failed

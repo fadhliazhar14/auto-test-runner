@@ -1,0 +1,66 @@
+=== Cucumber BDD Test Execution Log ===
+Feature: Test Feature
+Scenario: Test Scenario
+Execution Time: 14,27s
+Status: FAIL
+Timestamp: 2025-09-23T14:19:23.837262100
+Test Framework: Cucumber + Selenium WebDriver
+
+=== Execution Log ===
+[14:19:09] === Starting Cucumber BDD Test Execution ===
+[14:19:09] Feature: Test Feature
+[14:19:09] Scenario: Test Scenario
+[14:19:09] Steps: 6
+[14:19:09] 
+[14:19:09] Generated feature file: scenario_1_Test_Scenario.feature
+[14:19:09] Feature content:
+[14:19:09]   Feature: Test Feature
+[14:19:09]   
+[14:19:09]     Scenario: Test Scenario
+[14:19:09]       Given I open the page "https://www.google.com"
+[14:19:09]       When I type "OpenAI" into element "id:APjFqb"
+[14:19:09]       And I wait for 2 seconds
+[14:19:09]       And I click on element "(//input[@name='btnK'])[1]"
+[14:19:09]       Then I wait for 3 seconds
+[14:19:09]       And I should see "OpenAI" on element "h3"
+[14:19:09] 
+[14:19:09] 🚀 Starting REAL Selenium WebDriver execution...
+[14:19:09] 🔧 Configuring Selenium WebDriver...
+[14:19:09] ⚙️ Browser: Chrome (GUI Mode)
+[14:19:09] ⏱️ Timeout: 15 seconds
+[14:19:09] 
+[14:19:10] ✅ WebDriver initialized successfully!
+[14:19:10] 🔄 Test setup completed
+[14:19:10] 📋 Executing 6 test steps...
+[14:19:10] 
+[14:19:10] ➡️ Step 1/6: Given I open the page "https://www.google.com"
+[14:19:10] 🔍 Parsing step: I open the page "https://www.google.com"
+[14:19:15] ✅ Step PASSED
+[14:19:16] 
+[14:19:16] ➡️ Step 2/6: When I type "OpenAI" into element "id:APjFqb"
+[14:19:16] 🔍 Parsing step: I type "OpenAI" into element "id:APjFqb"
+[14:19:17] ✅ Step PASSED
+[14:19:18] 
+[14:19:18] ➡️ Step 3/6: And I wait for 2 seconds
+[14:19:18] 🔍 Parsing step: I wait for 2 seconds
+[14:19:20] ✅ Step PASSED
+[14:19:22] 
+[14:19:22] ➡️ Step 4/6: And I click on element "(//input[@name='btnK'])[1]"
+[14:19:22] 🔍 Parsing step: I click on element "(//input[@name='btnK'])[1]"
+[14:19:23] ❌ Step execution failed: element click intercepted: Element <input class="gNO89b" value="Penelusuran Google" aria-label="Penelusuran Google" name="btnK" role="button" tabindex="0" type="submit" data-ved="0ahUKEwirkrCFrO6PAxVU1jgGHdzhK60Q4dUDCA4"> is not clickable at point (80, 18). Other element would receive the click: <header class="gb_y gb_H gb_Bd" id="gb" role="none">...</header>
+  (Session info: chrome=140.0.7339.128)
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2bbe003e51ef5480bb3752710daf27a8, clickElement {id=f.1E6826DC7D63B8C1D9665C38968C6497.d.427095D849C50C6652D8B7B8C4BC1C39.e.40}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\User\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49672}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49672/devtoo..., se:cdpVersion: 140.0.7339.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (2bbe003e51ef5480bb3752710daf27a8)] -> xpath: (//input[@name='btnK'])[1]]
+Session ID: 2bbe003e51ef5480bb3752710daf27a8
+[14:19:23] ❌ Step FAILED
+[14:19:23] === Test Execution Summary ===
+[14:19:23] ❌ TEST FAILED!
+[14:19:23] 🚨 Failed at step 4/6
+[14:19:23] 🧩 Cleaning up test resources...
+
+=== Error Details ===
+Test execution failed

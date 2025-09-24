@@ -1,0 +1,42 @@
+=== BDD Test Execution Log ===
+Feature: Test Feature
+Scenario: Test Scenarion
+Execution Time: 28,59s
+Status: PASS
+Timestamp: 2025-09-22T15:58:15.308470600
+
+=== Execution Log ===
+[15:57:46] === Starting BDD Test Execution ===
+[15:57:46] Feature: Test Feature
+[15:57:46] Scenario: Test Scenarion
+[15:57:46] Steps: 6
+[15:57:46] 
+[15:57:46] Setting up Chrome WebDriver...
+[15:57:47] WebDriver initialized successfully
+[15:57:47] Executing 6 test steps...
+[15:57:47] 
+[15:57:47] Step 1/6: Given I open the page "https://www.google.com"
+[15:57:52] Navigated to Google homepage
+[15:57:54] ✓ Step completed successfully
+[15:57:54] 
+[15:57:56] Step 2/6: When I type "OpenAI" into element "input[name='q']"
+[15:57:58] Navigated to default page (Google)
+[15:58:00] ✓ Step completed successfully
+[15:58:00] 
+[15:58:01] Step 3/6: And I wait for 2 seconds
+[15:58:01] Executing generic step: I wait for 2 seconds
+[15:58:02] ✓ Step completed successfully
+[15:58:02] 
+[15:58:04] Step 4/6: And I click on element "(//input[@name='btnK'])[1]"
+[15:58:04] Click action simulated
+[15:58:05] ✓ Step completed successfully
+[15:58:05] 
+[15:58:06] Step 5/6: Then I wait for 3 seconds
+[15:58:06] Executing generic step: I wait for 3 seconds
+[15:58:07] ✓ Step completed successfully
+[15:58:07] 
+[15:58:09] Step 6/6: And I should see text "OpenAI" on element "h3"
+[15:58:11] Navigated to default page (Google)
+[15:58:13] ✓ Step completed successfully
+[15:58:13] 
+[15:58:15] === All steps completed successfully ===

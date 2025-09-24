@@ -1,0 +1,49 @@
+=== BDD Test Execution Log ===
+Feature: Test Feature
+Scenario: Test Scenario
+Execution Time: 17,20s
+Status: PASS
+Timestamp: 2025-09-22T16:27:42.994146100
+
+=== Execution Log ===
+[16:27:25] === Starting BDD Test Execution ===
+[16:27:25] Feature: Test Feature
+[16:27:25] Scenario: Test Scenario
+[16:27:25] Steps: 6
+[16:27:25] 
+[16:27:25] Setting up Chrome WebDriver...
+[16:27:26] WebDriver initialized successfully
+[16:27:26] Executing 6 test steps...
+[16:27:26] 
+[16:27:26] Step 1/6: Given I open the page "https://www.google.com"
+[16:27:26] Current step text : i open the page "https://www.google.com"
+[16:27:27] Navigated to Google homepage
+[16:27:29] ✓ Step completed successfully
+[16:27:29] 
+[16:27:31] Step 2/6: When I type "TEST" into element search
+[16:27:31] Current step text : i type "test" into element search
+[16:27:31] Entered text in search field: test input
+[16:27:31] ✓ Step completed successfully
+[16:27:31] 
+[16:27:32] Step 3/6: And I wait for 2 seconds
+[16:27:32] Current step text : i wait for 2 seconds
+[16:27:32] Executing generic step: I wait for 2 seconds
+[16:27:33] ✓ Step completed successfully
+[16:27:33] 
+[16:27:35] Step 4/6: And I click on element (//input[@name='btnK'])[1]
+[16:27:35] Current step text : i click on element (//input[@name='btnk'])[1]
+[16:27:35] Click action simulated
+[16:27:36] ✓ Step completed successfully
+[16:27:36] 
+[16:27:37] Step 5/6: Then I click on element "(//input[@name='btnK'])[1]"
+[16:27:37] Current step text : i click on element "(//input[@name='btnk'])[1]"
+[16:27:37] Click action simulated
+[16:27:38] ✓ Step completed successfully
+[16:27:38] 
+[16:27:40] Step 6/6: And I should see text "TESST" on element "h3"
+[16:27:40] Current step text : i should see text "tesst" on element "h3"
+[16:27:40] Current page title: Google
+[16:27:40] Verification completed successfully
+[16:27:41] ✓ Step completed successfully
+[16:27:41] 
+[16:27:42] === All steps completed successfully ===
